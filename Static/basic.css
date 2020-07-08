@@ -6,11 +6,63 @@
     width: 50%;
   }
 
-h4 {
+.coverpg{
+  background-color:rgb(43, 43, 73);
+}
+  h4 {
   color:white;
   background-color:rgb(43, 43, 73);
  }
 
-section {
+ .intro {
+ 
+  background-color: rgba(172, 13, 61, 0.822);
+}
+
+.page {
   border-style: double;
 }
+.container img{
+  filter: grayscale(70%);
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.coverimg {
+  filter: grayscale(100%);
+}
+
