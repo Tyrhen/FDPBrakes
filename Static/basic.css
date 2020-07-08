@@ -6,7 +6,11 @@
     width: 50%;
   }
 
-  p {
-    color:white;
-    background-color:gray;
+h4 {
+  color:white;
+  background-color:rgb(43, 43, 73);
  }
+
+section {
+  border-style: double;
+}
