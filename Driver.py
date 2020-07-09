@@ -1,10 +1,13 @@
+#Tools to implement variables into HTML File
+#Tools to covert HTML to PDF
 from jinja2 import Environment, FileSystemLoader
 file_loader = FileSystemLoader('templates')
 env = Environment(loader = file_loader)
 
 
-
+#Tools for Data Science/Data Analysis
 import pandas as pd 
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns 
 
@@ -15,5 +18,5 @@ xr = sns.lineplot(x = SAE_data['Initial Disc Brake Temperature (C)'], y = SAE_da
 
 
 template = env.get_template('base.html')
-template_vars = {"graph1": xr, "name": "FDP Brake"}
+template_vars = {}
 html_out = template.render(template_vars)
