@@ -9,22 +9,16 @@
 .coverpg{
   background-color:rgb(43, 43, 73);
 }
-  h4 {
-  color:white;
-  background-color:rgb(43, 43, 73);
- }
 
- .intro {
- 
-  background-color: rgba(172, 13, 61, 0.822);
+.img1{
+  filter: grayscale(20%);
+  opacity: 0.9;
 }
 
 .page {
   border-style: double;
 }
-.container img{
-  filter: grayscale(70%);
-}
+
 .container {
   position: relative;
   text-align: center;
@@ -51,7 +45,7 @@
 
 .bottom-right {
   position: absolute;
-  bottom: 8px;
+  bottom: 200px;
   right: 16px;
 }
 
@@ -62,7 +56,6 @@
   transform: translate(-50%, -50%);
 }
 
-.coverimg {
-  filter: grayscale(100%);
+.bg{
+  background: rgba(88, 104, 252, 0.8)
 }
-
