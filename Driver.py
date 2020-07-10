@@ -1,27 +1,16 @@
-#Tools to implement variables into HTML File
+
 #Tools to covert HTML to PDF
+from weasyprint import HTML, CSS
+HTML('https://weasyprint.readthedocs.io/en/stable/tutorial.html').write_pdf('weaasyprint-website.pdf', stylesheets=[CSS(string='body { font-family: serif !important }')])
 
-from weasyprint import HTML
-HTML('Templates/base.html').write_pdf('weasyprint-website.pdf')
+#Successful test of importing variables from another py file
+#can now separate the Datascience from the HTML formatting
+import Datasci
 
 
-
-
-
-"""
-#Tools for Data Science/Data Analysis
-import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns 
-
-SAE_path = "Test Protocols w Tire Calculator.xlsx"
-SAE_data = pd.read_excel(SAE_path, sheet_name=4, index_col='Test Section')
-SAE_data.drop(["Description"], axis = 1, inplace = True) 
-xr = sns.lineplot(x = SAE_data['Initial Disc Brake Temperature (C)'], y = SAE_data['Final Speed (mph)'])
-"""
 
 """
+#Tools to implement variables into HTML File
 from jinja2 import Environment, FileSystemLoader
 file_loader = FileSystemLoader('templates')
 env = Environment(loader = file_loader)
