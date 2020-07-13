@@ -34,11 +34,11 @@
     text-align: center;
     width: 1cm; }
   @top-center {
-    background: #a79363;
+    background: #3d5bbb;
     content: '';
     display: block;
     height: .05cm;
-    opacity: .5;
+    opacity: .2;
     width: 100%; }
   @top-right {
     content: string(heading);
@@ -66,9 +66,11 @@
     content: none; } }
 
 @page :first {
-  background: url(Pictures/lights.jpg) no-repeat center;
+  background: url(Pictures/light.jpg) no-repeat center ;
   background-size: cover;
-  margin: 0; }
+  margin: 0;
+  
+ }
 
 @page chapter {
   background: #fbc847;
@@ -110,9 +112,9 @@ html {
     flex-wrap: wrap;
     height: 297mm; }
     html body article#cover address {
-      background: #fbc847;
+      background: #ffffff;
       flex: 1 50%;
-      margin: 0 -2cm;
+      margin: 0 -3cm;
       padding: 1cm 0;
       white-space: pre-wrap; }
       html body article#cover address:first-of-type {
