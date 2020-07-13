@@ -1,7 +1,7 @@
 
 #Tools to covert HTML to PDF
 from weasyprint import HTML, CSS
-HTML('https://weasyprint.readthedocs.io/en/stable/tutorial.html').write_pdf('weaasyprint-website.pdf', stylesheets=[CSS(string='body { font-family: serif !important }')])
+HTML('base.html').write_pdf('report.pdf')
 
 #Successful test of importing variables from another py file
 #can now separate the Datascience from the HTML formatting
