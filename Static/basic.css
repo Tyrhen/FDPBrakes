@@ -28,13 +28,13 @@
 
 @page {
   @top-left {
-    background: #fbc847;
+    background: #26679c;
     content: counter(page);
     height: 1cm;
     text-align: center;
     width: 1cm; }
   @top-center {
-    background: #3d5bbb;
+    background: #26679c;
     content: '';
     display: block;
     height: .05cm;
@@ -73,7 +73,7 @@
  }
 
 @page chapter {
-  background: #fbc847;
+  background: #26679c;
   margin: 0;
   @top-left {
     content: none; }
@@ -82,6 +82,8 @@
   @top-right {
     content: none; } }
 
+
+
 html {
   color: #393939;
   font-family: Fira Sans;
@@ -89,7 +91,7 @@ html {
   font-weight: 300;
   line-height: 1.5; }
   html body h1 {
-    color: #fbc847;
+    color: #ffffff;
     font-size: 38pt;
     margin: 5cm 2cm 0 2cm;
     @page: no-chapter;
@@ -119,6 +121,12 @@ html {
       white-space: pre-wrap; }
       html body article#cover address:first-of-type {
         padding-left: 3cm; }
+        
+img.resize {
+          max-width:75%;
+          max-height:75%;
+        }
+        
   html body article#contents {
     break-before: right;
     break-after: left;
@@ -131,7 +139,7 @@ html {
       font-weight: 500;
       margin: 3em 0 1em; }
       html body article#contents h3::before {
-        background: #fbc847;
+        background: #26679c;
         content: '';
         display: block;
         height: .08cm;
@@ -145,7 +153,7 @@ html {
         margin: .25cm 0;
         padding-top: .25cm; }
         html body article#contents ul li::before {
-          color: #fbc847;
+          color: #26679c;
           content: '• ';
           font-size: 40pt;
           line-height: 16pt;
@@ -156,7 +164,7 @@ html {
           html body article#contents ul li a::before {
             content: target-text(attr(href)); }
           html body article#contents ul li a::after {
-            color: #fbc847;
+            color: #26679c;
             content: target-counter(attr(href), page);
             float: right; }
   html body article#columns section {
@@ -168,7 +176,7 @@ html {
       html body article#columns section p:first-of-type {
         font-weight: 700; }
   html body article#competences h3 {
-    background: #fbc847;
+    background: #26679c;
     margin: 0 -3cm 1cm;
     padding: 1cm 1cm 1cm 3cm;
     width: 21cm; }
