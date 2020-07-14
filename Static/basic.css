@@ -93,7 +93,7 @@ html {
   html body h1 {
     color: #ffffff;
     font-size: 38pt;
-    margin: 5cm 2cm 0 2cm;
+    margin: 1cm 1cm;
     @page: no-chapter;
     width: 100%; }
   html body h2, html body h3, html body h4 {
@@ -117,10 +117,17 @@ html {
       background: #ffffff;
       flex: 1 50%;
       margin: 0 -3cm;
-      padding: 1cm 0;
+      padding: .2cm 0;
+      text-transform: uppercase;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-weight: 900;
+      font-style: normal;
+      font-size: 13pt;
       white-space: pre-wrap; }
       html body article#cover address:first-of-type {
-        padding-left: 3cm; }
+        padding-left: 4cm; }
+      html body article#cover address:nth-last-of-type(1) {
+          padding-left: 4cm; }
         
 img.resize {
           max-width:75%;
