@@ -7,7 +7,7 @@ if __name__ == "__main__":
         #tools for creating variable template environment converting HTML to PDF
         from jinja2 import Environment, FileSystemLoader
         from weasyprint import HTML, CSS
-        
+          
         #loading the HTML file into an environment to pass variables to it
         file_loader = FileSystemLoader('.')
         env = Environment(loader = file_loader)
@@ -24,8 +24,6 @@ if __name__ == "__main__":
         HTML(string = html_out, base_url='.').write_pdf('report.pdf', stylesheets=["/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Static/basic.css"])
    
     PDFconverter()
-#Successful test of importing variables from another py file
-#can now separate the Datascience from the HTML formatting
 
 
 
