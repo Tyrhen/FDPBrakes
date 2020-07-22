@@ -1,3 +1,49 @@
+/*New stuff*/
+#customers {
+  border-collapse: collapse;
+  font-size: small;
+  display: inline-table;
+  width: 220%;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  text-align: left;
+  background-color: #26679c;
+  color: white;
+}
+#customers #subth {
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+}
+/*.table_info{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table_info td, #table_info th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#table_info tr:nth-child(even){background-color: #f2f2f2;}
+
+#table_info tr:hover {background-color: #ddd;}
+
+#table_info th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+*/
+
+/*Imported stuff*/
 @charset "UTF-8";
 @font-face {
   font-family: Fira Sans;
@@ -82,6 +128,7 @@
   @top-right {
     content: none; } }
 
+/*Sspecific HTML stuff*/
 html {
   color: #393939;
   font-family: Fira Sans;
