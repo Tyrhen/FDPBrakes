@@ -12,28 +12,17 @@ def logic(index):
     return True
 
 #import data
-SAE_path = "/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/07-15-2020 0.csv"
+SAE_path = "/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Test_Data_Filtered.csv"
 SAE_data = pd.read_csv(SAE_path, skiprows= lambda x: logic(x) )
 
+#Break data into the test sections 
+Section_1 = SAE_data[(SAE_data['Next Test Section'] == 1)]
+Section_2 = SAE_data[SAE_data['Next Test Section'] == 2]
+Section_3 = SAE_data[SAE_data['Next Test Section'] == 3]
 
 
-#have just rows of the braking portions of the runs
-
-SAE_data = SAE_data[SAE_data['Mu'] != '#DIV/0!']
-for item in SAE_data['Mu']:
-    str(item)
-
-
-
-#def SeperateRuns(SAE_data):
-    #Break data into the test sections 
-    Section_1 = SAE_data[(SAE_data['Next Test Section'] == 1)]
-    Section_2 = SAE_data[SAE_data['Next Test Section'] == 2]
-    Section_3 = SAE_data[SAE_data['Next Test Section'] == 3]
-
-
-
-#def describing():
+"""
+#def OutputDescribeTable():
     desc = SAE_data.describe()
     #create a subplot without frame
     plot = plt.subplot(111, frame_on=False)
@@ -48,12 +37,12 @@ for item in SAE_data['Mu']:
     #set the style of the graphs 
     sns.set_style("darkgrid")
 
+"""
 
-#def plots():
-    corr = Section_2.corr()
-    x= sns.heatmap(corr)
-    y = sns.lineplot(x = 'Mu' , y = 'Temp 3 Inboard (F)', data = Section_1)
-    plt.show()
+corr = Section_2.corr()
+x= sns.heatmap(corr)
+y = sns.lineplot(x = 'Mu' , y = 'Temp 3 Inboard (F)', data = Section_1)
+plt.show()
 
 """
 plt.figure(figsize=(3,3), dpi =100, facecolor= 'blue')
