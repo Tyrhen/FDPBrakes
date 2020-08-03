@@ -3,36 +3,57 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns 
+from pandas.plotting import table
 
-#function to only pull in every 7th row of information
+#function to only pull in every 7th row of data (too many data points currently)
 def logic(index):
     if index % 7 == 0:
         return False
     return True
 
+#import data
 SAE_path = "/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/07-15-2020 0.csv"
 SAE_data = pd.read_csv(SAE_path, skiprows= lambda x: logic(x) )
 
-#To have just rows of the actual braking process
+
+
+#have just rows of the braking portions of the runs
+
 SAE_data = SAE_data[SAE_data['Mu'] != '#DIV/0!']
-Section_1 = SAE_data[(SAE_data['Next Test Section'] == 1) & SAE_data['Mu'] > 0]
-Section_2 = SAE_data[SAE_data['Next Test Section'] == 2]
-Section_3 = SAE_data[SAE_data['Next Test Section'] == 3]
-#to drop all categorical data and get rid of Air pressure
-#SAE_data.drop(["Air Pressure (PSI)","Load Cell Value (lbs)","Step_Value","Next Test Section"], axis =1, inplace = True)
+for item in SAE_data['Mu']:
+    str(item)
 
 
 
-#set the style of the graphs 
-sns.set_style("darkgrid")
+#def SeperateRuns(SAE_data):
+    #Break data into the test sections 
+    Section_1 = SAE_data[(SAE_data['Next Test Section'] == 1)]
+    Section_2 = SAE_data[SAE_data['Next Test Section'] == 2]
+    Section_3 = SAE_data[SAE_data['Next Test Section'] == 3]
 
-#Plots
-corr = Section_1.corr()
-x= sns.heatmap(corr)
-y = sns.lineplot(x = 'Mu' , y = 'Temp 3 Inboard (F)', data = Section_1)
-plt.xticks(np.arange(0,1))
-#print(SAE_data.head())
-plt.show(y)
+
+
+#def describing():
+    desc = SAE_data.describe()
+    #create a subplot without frame
+    plot = plt.subplot(111, frame_on=False)
+    #remove axis
+    plot.xaxis.set_visible(False) 
+    plot.yaxis.set_visible(False) 
+    #create the table plot and position it in the upper left corner
+    table(plot, desc,loc='upper right')
+    #save the plot as a png file
+    plt.savefig('desc_plot.png')
+
+    #set the style of the graphs 
+    sns.set_style("darkgrid")
+
+
+#def plots():
+    corr = Section_2.corr()
+    x= sns.heatmap(corr)
+    y = sns.lineplot(x = 'Mu' , y = 'Temp 3 Inboard (F)', data = Section_1)
+    plt.show()
 
 """
 plt.figure(figsize=(3,3), dpi =100, facecolor= 'blue')
