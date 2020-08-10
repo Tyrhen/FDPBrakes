@@ -4,6 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns 
 from pandas.plotting import table
+import matplotlib.ticker as mticker
+
 
 #function to only pull in every 7th row of data (too many data points currently)
 def logic(index):
@@ -12,7 +14,7 @@ def logic(index):
     return True
 
 #import data
-SAE_path = "/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Test_Data_Filtered.csv"
+SAE_path = "/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Test_Data_Filter.csv"
 SAE_data = pd.read_csv(SAE_path, skiprows= lambda x: logic(x) )
 
 #Break data into the test sections 
@@ -35,18 +37,48 @@ Section_3 = SAE_data[SAE_data['Next Test Section'] == 3]
     plt.savefig('desc_plot.png')
 
     #set the style of the graphs 
-    sns.set_style("darkgrid")
-
+    
 """
+sns.set_style("darkgrid")
+#corr = Section_2.corr()
+#x= sns.heatmap(corr)
 
-corr = Section_2.corr()
-x= sns.heatmap(corr)
-y = sns.lineplot(x = 'Mu' , y = 'Temp 3 Inboard (F)', data = Section_1)
-plt.show()
+
+def Multiplot():
+    fig1, (ax1,ax2,ax3) = plt.subplots(1,3, figsize = (8,4))
+    sns.swarmplot(x="Dyno Speed (RPM)", y = 'Temp 3 Inboard (F)', data = Section_1 , ax = ax2)
+    ax2.set_xticklabels([])
+
+    sns.regplot(x = 'Mu' , y = 'Temp 3 Inboard (F)', data = Section_1, x_bins = 4, ax =ax1)
+    ax2.set_ylabel("")
+    ax2.set_yticklabels([])
+    ax2.set_xticklabels([])
+
+
+    sns.lineplot(x = "Temp 4 Outboard (F)", y = 'Temp 3 Inboard (F)', data = Section_1,  ax =ax3 )
+    ax3.set_ylabel("")
+    ax3.set_yticklabels([])
+    return fig1.savefig("fig1.png")
+    
+
+def facetplot():
+    for item in SAE_data["Next Test Section"]:
+        str(item)
+    fig2 = sns.FacetGrid(SAE_data, col = "Next Test Section")
+    fig2 = fig2.map(plt.scatter, "Mu", "Temp 3 Inboard (F)", edgecolor = "w",)
+    return fig2.savefig("fig2.png")
+    
+Multiplot()
+facetplot()
+
+#paths
+fig1 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig1.png"
+fig2 =  "/Users/Ty/Desktop/FDP_brakes_proj_local/fig2.png"
 
 """
 plt.figure(figsize=(3,3), dpi =100, facecolor= 'blue')
 xr = sns.regplot(x = SAE_data['Initial Disc Brake Temperature (C)'], y = SAE_data['Final Speed (mph)'])
 graph = plt.savefig("graph1.png")
 graph1 = "/Users/Ty/Desktop/FDP_brakes_proj_local/graph1.png"
+
 """

@@ -17,7 +17,8 @@ if __name__ == "__main__":
         template_vars = {"test": "testing" ,
             "Report_Standard":"SAE J2707 Report Example",
             "Make_And_Model": "2010 Ford F-150",
-            "graph_1": Datasci.graph1}
+            "fig_1": Datasci.fig1,
+            "fig_2": Datasci.fig2}
         
         #Rendering the variables in and then converting the HTML to PDF
         html_out = template.render(template_vars)
