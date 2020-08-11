@@ -19,15 +19,20 @@
   text-align: left;
   background-color: rgb(255, 255, 255);
 }
+div {
+  border: 1px solid #000000;
+}
 .fig1{
-  width: 200%;
-  height:500px;
-  border: 5px dashed #f7a239;
- }  
-  img {
+  width: 100%;
+  height: 700px;
+}
+img {
   width: 100%;
   height: 100%;
-  }
+
+}
+
+
 /*Imported stuff*/
 @charset "UTF-8";
 @font-face {
@@ -76,8 +81,20 @@
     font-size: 9pt;
     height: 1cm;
     vertical-align: middle;
-    width: 100%; } }
-
+    width: 100%; } 
+    @bottom-left {
+      content: 'FDPBrakes';
+      opacity: .40;
+      height: 1cm;
+      text-align: center;
+      width: 1cm; } 
+      @bottom-center {
+        background-image: url("/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Static/Pictures/FDPLogo.png") ;
+        display: block;
+        height: .05cm;
+        opacity: .2;
+        width: 100%; }}
+  
 @page :blank {
   @top-left {
     background: none;
@@ -137,7 +154,7 @@ html {
   html body h2 {
     break-before: always;
     font-size: 28pt;
-    string-set: heading content(); }
+    }
   html body h3 {
     font-weight: 300;
     font-size: 15pt; }
@@ -213,101 +230,42 @@ img.resize {
     columns: 2;
     column-gap: 1cm;
     padding-top: 1cm; }
-    html body article#columns section p {
-      text-align: justify; }
-      html body article#columns section p:first-of-type {
-        font-weight: 700; }
-  html body article#competences h3 {
+    
+    html body article#competencies section {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 1cm 0; }
+    html body article#competencies h3 {
     background: #26679c;
+    font-weight: bold;
+    color: white;
     margin: 0 -3cm 1cm;
     padding: 1cm 1cm 1cm 3cm;
     width: 21cm; }
-  html body article#competences section {
-    padding: .5cm 0; }
-    html body article#competences section#table-content::before {
-      background: url(table-content.svg) no-repeat center #fbc847;
-      background-size: 50%;
-      content: '';
-      display: inline-block;
-      float: left;
-      height: 2cm;
-      margin-right: .5cm;
-      vertical-align: middle;
-      width: 2cm; }
-    html body article#competences section#heading::before {
-      background: url(heading.svg) no-repeat center #fbc847;
-      background-size: 50%;
-      content: '';
-      display: inline-block;
-      float: left;
-      height: 2cm;
-      margin-right: .5cm;
-      vertical-align: middle;
-      width: 2cm; }
-    html body article#competences section#multi-columns::before {
-      background: url(multi-columns.svg) no-repeat center #fbc847;
-      background-size: 50%;
-      content: '';
-      display: inline-block;
-      float: left;
-      height: 2cm;
-      margin-right: .5cm;
-      vertical-align: middle;
-      width: 2cm; }
-    html body article#competences section#internal-links::before {
-      background: url(internal-links.svg) no-repeat center #fbc847;
-      background-size: 50%;
-      content: '';
-      display: inline-block;
-      float: left;
-      height: 2cm;
-      margin-right: .5cm;
-      vertical-align: middle;
-      width: 2cm; }
-    html body article#competences section#style::before {
-      background: url(style.svg) no-repeat center #fbc847;
-      background-size: 50%;
-      content: '';
-      display: inline-block;
-      float: left;
-      height: 2cm;
-      margin-right: .5cm;
-      vertical-align: middle;
-      width: 2cm; }
-    html body article#competences section h4 {
+    html body article#competencies section h4 {
+      border-top: 1pt solid;
+      flex: 1 25%;
       margin: 0; }
-    html body article#competences section p {
-      margin-top: 0; }
-  html body article#offers {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; }
-    html body article#offers h2, html body article#offers h3 {
-      width: 100%; }
-    html body article#offers section {
-      width: 30%; }
-      html body article#offers section h4 {
-        margin-bottom: 0; }
-      html body article#offers section ul {
-        list-style: none;
-        margin: 0;
-        padding-left: 0; }
-        html body article#offers section ul li:not(:last-of-type) {
-          margin: .5cm 0; }
-      html body article#offers section p {
-        background: #fbc847;
-        display: block;
-        font-size: 15pt;
-        font-weight: 700;
-        margin-bottom: 0;
-        padding: .25cm 0;
-        text-align: center; }
-  html body article#chapter {
+    html body article#competencies section h4 + * {
+      flex: 1 75%;
+      margin: 0;
+      padding-left: .5cm; }
+    html body article#competencies section p {
+      text-align: justify; }
+    html body article#competencies section ul {line-height: 2;
+      list-style: none; }
+    html body article#competencies section#small-caps p {
+        font-variant: small-caps; }
+    html body article#competencies section#ligatures dl { display: flex;
+      flex-wrap: wrap; }
+  
+html body article#chapter {
     align-items: center;
     display: flex;
     height: 297mm;
     justify-content: center;
     @page: chapter; }
+
   html body article#typography section {
     display: flex;
     flex-wrap: wrap;
@@ -325,59 +283,11 @@ img.resize {
     html body article#typography section ul {
       line-height: 2;
       list-style: none; }
-    html body article#typography section#small-caps p {
+    
+      html body article#typography section#small-caps p {
       font-variant: small-caps; }
     html body article#typography section#ligatures dl {
       display: flex;
       flex-wrap: wrap; }
-      html body article#typography section#ligatures dl dt {
-        font-weight: 400;
-        width: 30%; }
-      html body article#typography section#ligatures dl dd {
-        flex: 1 70%;
-        margin: 0;
-        padding: 0; }
-    html body article#typography section#ligatures .none {
-      font-variant-ligatures: none; }
-    html body article#typography section#ligatures .common {
-      font-variant-ligatures: common-ligatures; }
-    html body article#typography section#ligatures .discretionary {
-      font-variant-ligatures: discretionary-ligatures; }
-    html body article#typography section#ligatures .contextual {
-      font-variant-ligatures: contextual; }
-    html body article#typography section#numbers dl {
-      display: flex;
-      flex-wrap: wrap; }
-      html body article#typography section#numbers dl dt {
-        font-weight: 400;
-        width: 30%; }
-      html body article#typography section#numbers dl dd {
-        flex: 1 70%;
-        margin: 0;
-        padding: 0; }
-    html body article#typography section#numbers #fractions {
-      font-variant-numeric: diagonal-fractions; }
-    html body article#typography section#numbers #ordinals {
-      font-variant-numeric: ordinal; }
-    html body article#typography section#numbers #slashed {
-      font-variant-numeric: slashed-zero; }
-    html body article#typography section#numbers #super {
-      font-variant-position: super; }
-    html body article#typography section#numbers #sub {
-      font-variant-position: sub; }
-    html body article#typography section#figures dl {
-      columns: 4; }
-      html body article#typography section#figures dl dt {
-        font-weight: 400; }
-      html body article#typography section#figures dl dd {
-        display: flex;
-        margin: 0;
-        padding: 0; }
-        html body article#typography section#figures dl dd ul {
-          padding: 0 1em 0 0; }
-    html body article#typography section#figures #oldstyle {
-      font-variant-numeric: oldstyle-nums; }
-    html body article#typography section#figures #tabular {
-      font-variant-numeric: tabular-nums; }
-    html body article#typography section#figures #old-tabular {
-      font-variant-numeric: oldstyle-nums tabular-nums; }
+    
+ 

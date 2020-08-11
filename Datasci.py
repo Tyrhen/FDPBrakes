@@ -40,12 +40,10 @@ Section_3 = SAE_data[SAE_data['Next Test Section'] == 3]
     
 """
 sns.set_style("darkgrid")
-#corr = Section_2.corr()
-#x= sns.heatmap(corr)
 
 
 def Multiplot():
-    fig1, (ax1,ax2,ax3) = plt.subplots(1,3, figsize = (8,4))
+    fig1, (ax1,ax2,ax3) = plt.subplots(1,3, figsize=(13,4.5))
     sns.swarmplot(x="Dyno Speed (RPM)", y = 'Temp 3 Inboard (F)', data = Section_1 , ax = ax2)
     ax2.set_xticklabels([])
 
@@ -67,18 +65,23 @@ def facetplot():
     fig2 = sns.FacetGrid(SAE_data, col = "Next Test Section")
     fig2 = fig2.map(plt.scatter, "Mu", "Temp 3 Inboard (F)", edgecolor = "w",)
     return fig2.savefig("fig2.png")
+
+def heatmap():
+    s2 = Section_2.drop('Next Test Section',axis =1)
+    corr = s2.corr()
+    heat = sns.heatmap(corr)
+    fig3 = heat.get_figure()
+    fig3.tight_layout()
+    return fig3.savefig("fig3.png")
     
+heatmap()
 Multiplot()
 facetplot()
+
 
 #paths
 fig1 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig1.png"
 fig2 =  "/Users/Ty/Desktop/FDP_brakes_proj_local/fig2.png"
+fig3 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig3.png"
 
-"""
-plt.figure(figsize=(3,3), dpi =100, facecolor= 'blue')
-xr = sns.regplot(x = SAE_data['Initial Disc Brake Temperature (C)'], y = SAE_data['Final Speed (mph)'])
-graph = plt.savefig("graph1.png")
-graph1 = "/Users/Ty/Desktop/FDP_brakes_proj_local/graph1.png"
 
-"""
