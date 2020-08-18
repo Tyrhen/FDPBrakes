@@ -37,10 +37,8 @@ Section_3 = SAE_data[SAE_data['Next Test Section'] == 3]
     plt.savefig('desc_plot.png')
 
     #set the style of the graphs 
-    
+  
 """
-
-
 """
 def Multiplot():
     fig1, (ax1,ax2,ax3) = plt.subplots(1,3, figsize=(13,4.5))
@@ -58,8 +56,14 @@ def Multiplot():
     ax3.set_yticklabels([])
     return fig1.savefig("fig1.svg")
 """
+
+
+#general styling for plots
 sns.set_style("whitegrid")
+
+"""Below are all the functions that produce graphs"""
 def facetplot1():
+    sns.set_style("whitegrid")
     for item in SAE_data["Next Test Section"]:
         str(item)
     fig1 = sns.FacetGrid(SAE_data, col = "Next Test Section")
@@ -67,6 +71,7 @@ def facetplot1():
     return fig1.savefig("fig1.svg")
 
 def facetplot2():
+    sns.set_style("darkgrid")
     for item in SAE_data["Next Test Section"]:
         str(item)
     for item in SAE_data["Cycle_Count_Value"]:
@@ -74,9 +79,11 @@ def facetplot2():
 
     fig2 = sns.FacetGrid(SAE_data, col = "Next Test Section")
     fig2 = fig2.map(plt.scatter, "Mu", "Temp 3 Inboard (F)", edgecolor = "w",)
+    
     return fig2.savefig("fig2.svg")
 
 def facetplot3():
+    sns.set_style("white")
     for item in SAE_data["Next Test Section"]:
         str(item)
     for item in SAE_data["Cycle_Count_Value"]:
@@ -86,6 +93,7 @@ def facetplot3():
     return fig5.savefig("fig5.svg")
 
 def relplot():
+    sns.set_style("dark")
     for item in SAE_data["Next Test Section"]:
         str(item)
     for item in SAE_data["Cycle_Count_Value"]:
@@ -94,19 +102,46 @@ def relplot():
     hue="Cycle_Count_Value", kind="scatter", data=SAE_data)
     return fig4.savefig("fig4.svg")
 
+def relplot2():
+    sns.set_style("whitegrid")
+    for item in SAE_data["Next Test Section"]:
+        str(item)
+    for item in SAE_data["Cycle_Count_Value"]:
+        float(item)
+    fig6 = sns.relplot(x="Mu", y="Temp 4 Outboard (F)", hue="Cycle_Count_Value", col="Next Test Section",
+    height=5, aspect=.7, kind="line", data=SAE_data)
+    return fig6.savefig("fig6.svg")
+
+def lineplot1():
+    fig7 = sns.lmplot(x="Mu", y="Temp 4 Outboard (F)", col="Next Test Section", hue="Next Test Section", data =SAE_data, col_wrap = 3, height = 3)
+    return fig7.savefig("fig7.svg")
+
 def heatmap():
     s2 = Section_2.drop('Next Test Section',axis =1)
     corr = s2.corr()
-    heat = sns.heatmap(corr)
+    mask = np.zeros_like(corr)
+    mask[np.triu_indices_from(mask)] = True
+    with sns.axes_style("white"):
+     fig3, heat = plt.subplots(figsize=(7, 5))
+     heat = sns.heatmap(corr, mask=mask, vmax=.3, square=True)
+    
     fig3 = heat.get_figure()
     fig3.tight_layout()
     return fig3.savefig("fig3.svg")
-    
+
+def lineplot2():
+    axs = sns.lineplot(data=SAE_data["Temp 3 Inboard (F)"], color="coral", label="line")
+    fig8 = axs.get_figure()
+    return fig8.savefig("fig8.svg")
+
 heatmap()
 facetplot1()
 facetplot2()
 facetplot3()
 relplot()
+relplot2()
+lineplot1()
+lineplot2()
 
 
 #paths
@@ -115,6 +150,9 @@ fig2 =  "/Users/Ty/Desktop/FDP_brakes_proj_local/fig2.svg"
 fig3 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig3.svg"
 fig4 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig4.svg"
 fig5 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig5.svg"
+fig6 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig6.svg"
+fig7 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig7.svg"
+fig8 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig8.svg"
 
 
 

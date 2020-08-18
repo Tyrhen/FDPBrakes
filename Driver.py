@@ -21,7 +21,11 @@ if __name__ == "__main__":
             "fig_2": Datasci.fig2,
             "fig_3": Datasci.fig3,
             "fig_4": Datasci.fig4,
-            "fig_5": Datasci.fig5}
+            "fig_5": Datasci.fig5,
+            "fig_6": Datasci.fig6,
+            "fig_7": Datasci.fig7,
+            "fig_8": Datasci.fig8,
+            }
         
         #Rendering the variables in and then converting the HTML to PDF
         html_out = template.render(template_vars)
