@@ -16,7 +16,7 @@ if __name__ == "__main__":
         #list of variables to pass 
         template_vars = {"test": "testing" ,
             "Report_Standard":"SAE J2707 Report Example",
-            "Make_And_Model": "2010 Ford F-150",
+            "Make_And_Model": "2019 Ford F-150",
             "fig_1": Datasci.fig1,
             "fig_2": Datasci.fig2,
             "fig_3": Datasci.fig3,
@@ -24,7 +24,6 @@ if __name__ == "__main__":
             "fig_5": Datasci.fig5,
             "fig_6": Datasci.fig6,
             "fig_7": Datasci.fig7,
-            "fig_8": Datasci.fig8,
             }
         
         #Rendering the variables in and then converting the HTML to PDF

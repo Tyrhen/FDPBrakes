@@ -14,7 +14,7 @@ def logic(index):
     return True
 
 #import data
-SAE_path = "/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Test_Data_Filter.csv"
+SAE_path = "/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Datasets/Test_Data_Filter.csv"
 SAE_data = pd.read_csv(SAE_path, skiprows= lambda x: logic(x) )
 
 #Break data into the test sections 
@@ -89,11 +89,14 @@ def facetplot3():
     for item in SAE_data["Cycle_Count_Value"]:
         float(item)
     fig5 = sns.FacetGrid(SAE_data, col = "Next Test Section")
-    fig5 = fig5.map(plt.bar, "Cycle_Count_Value", "Mu",)
+    fig5 = fig5.map(plt.bar, "Cycle_Count_Value", "Mu", color = 'red', ecolor = 'black')
     return fig5.savefig("fig5.svg")
 
 def relplot():
-    sns.set_style("dark")
+    sns.set_style("whitegrid")
+    current_palette = sns.color_palette("dark")
+    sns.palplot(current_palette)
+    sns.set_context("notebook", font_scale=1.5, rc={"lines.linewidth": 2.5})
     for item in SAE_data["Next Test Section"]:
         str(item)
     for item in SAE_data["Cycle_Count_Value"]:
@@ -113,7 +116,7 @@ def relplot2():
     return fig6.savefig("fig6.svg")
 
 def lineplot1():
-    fig7 = sns.lmplot(x="Mu", y="Temp 4 Outboard (F)", col="Next Test Section", hue="Next Test Section", data =SAE_data, col_wrap = 3, height = 3)
+    fig7 = sns.lmplot(x="Mu", y="Temp 4 Outboard (F)", col="Next Test Section", hue="Next Test Section", data =SAE_data, fit_reg = True, col_wrap = 3, height = 3)
     return fig7.savefig("fig7.svg")
 
 def heatmap():
@@ -129,11 +132,6 @@ def heatmap():
     fig3.tight_layout()
     return fig3.savefig("fig3.svg")
 
-def lineplot2():
-    axs = sns.lineplot(data=SAE_data["Temp 3 Inboard (F)"], color="coral", label="line")
-    fig8 = axs.get_figure()
-    return fig8.savefig("fig8.svg")
-
 heatmap()
 facetplot1()
 facetplot2()
@@ -141,18 +139,18 @@ facetplot3()
 relplot()
 relplot2()
 lineplot1()
-lineplot2()
+
 
 
 #paths
-fig1 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig1.svg"
-fig2 =  "/Users/Ty/Desktop/FDP_brakes_proj_local/fig2.svg"
-fig3 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig3.svg"
-fig4 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig4.svg"
-fig5 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig5.svg"
-fig6 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig6.svg"
-fig7 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig7.svg"
-fig8 = "/Users/Ty/Desktop/FDP_brakes_proj_local/fig8.svg"
+fig1 = "/Users/Ty/Desktop/FDP_brakes_proj_local/Figures/fig1.svg"
+fig2 =  "/Users/Ty/Desktop/FDP_brakes_proj_local/Figures/fig2.svg"
+fig3 = "/Users/Ty/Desktop/FDP_brakes_proj_local/Figures/fig3.svg"
+fig4 = "/Users/Ty/Desktop/FDP_brakes_proj_local/Figures/fig4.svg"
+fig5 = "/Users/Ty/Desktop/FDP_brakes_proj_local/Figures/fig5.svg"
+fig6 = "/Users/Ty/Desktop/FDP_brakes_proj_local/Figures/fig6.svg"
+fig7 = "/Users/Ty/Desktop/FDP_brakes_proj_local/Figures/fig7.svg"
+
 
 
 
