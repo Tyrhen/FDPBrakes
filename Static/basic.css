@@ -1,4 +1,4 @@
-/*New stuff*/
+/*Table Formatting*/
 #customers {
   border-collapse: collapse;
   font-size: small;
@@ -19,6 +19,8 @@
   text-align: left;
   background-color: rgb(255, 255, 255);
 }
+
+/*Image Formatting*/
 /*div {
   border: 1px solid #000000;
 }
@@ -32,10 +34,30 @@ img {
   height: 100%;
 
 }
+img.resize {
+  max-width:75%;
+  max-height:75%;
+}
 
+.center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+  text-align: center;
+}
 
-/*Imported stuff*/
-@charset "UTF-8";
+.covermain{
+  background-color: #26679c;
+  text-align: center;
+  height: 35px;
+  width: 500px;
+  transform: translate(100px, 0px)
+
+}
+
+/*Page Formatting*/
+
 @font-face {
   font-family: Fira Sans;
   font-weight: 400;
@@ -127,11 +149,7 @@ img {
     content: none; } }
 
 
-
-
-
-
-/*Sspecific HTML stuff*/
+/*Specific HTML Formatting*/
 html {
   color: #393939;
   font-family: Fira Sans;
@@ -158,33 +176,10 @@ html {
     font-size: 15pt; }
   html body h4 {
     font-size: 13pt; }
-  html body article#cover {
-    align-content: space-between;
-    display: flex;
-    flex-wrap: wrap;
-    height: 297mm; }
-    html body article#cover address {
-      background: #26679c;
-      flex: 1 50%;
-      margin: 0 -3cm;
-      padding: .2cm 0;
-      text-transform: uppercase;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      font-weight: 900;
-      font-style: normal;
-      font-size: 12pt;
-      color: white;
-      white-space: pre-wrap; }
-      html body article#cover address:first-of-type {
-        padding-left: 4cm; }
-      html body article#cover address:nth-last-of-type(1) {
-          padding-left: 4cm; }
-        
-img.resize {
-          max-width:75%;
-          max-height:75%;
-        }
-        
+         
+
+  html body article#cover h3 {
+      color: #ffffff;}
   html body article#contents {
     break-before: right;
     break-after: left;
