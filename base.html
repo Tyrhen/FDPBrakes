@@ -9,8 +9,9 @@
 
   <body>
     <article id="cover">
-      <img class = "resize" src ="file:\\\C:\Users\cboyd\FDP_report_project\FDPBrakes\Static\Pictures\FDPLogo.png" >
       <img class = "center" src = "/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Static/Pictures/FDPLogo.png" style ="width:25%;height:25%;"> 
+      
+      <div class = "border">
       <div class = "covermain">
       <h3>{{Report_Standard}}</h3> 
     </div>
@@ -51,13 +52,12 @@
     <div class = "covermain">
       <h3>Requested By:</h3>
     </div>
-      <h4 style="text-align:center;">Singer Automotive Ltd</h4>
-      <p style="text-align:center;"> Los Angeles <br> California USA</p>
-      <div class = "covermain">
+      <p style="text-align:center;">Singer Automotive Ltd <br> Los Angeles <br> California USA</p>
+    <div class = "covermain">
       <h3 style="text-align:center;">Tested By:</h3>
     </div>
       <P style="text-align:center;">FDP BRAKES <br> 1076 Airport Rd <br> Tappahannock, VA 22560 <br> <u>www.fdpbrakes.com</u> </P>
-      
+    </div>
     
     </article>
 
@@ -268,10 +268,6 @@
       </div>
       <p><i>Description</i>: This graph displays the Cycle Count Value versus Mu for each test section in a bar graph. (*The lines in the bar is an error*)the average braking coefficient for each stop in a Test Section</p>
       <div>
-        <img src="{{fig_6}}" alt="third graph">
-      </div>
-      <p><i>Description</i>: This graph displays the Mu value vs Outboard Temperature for each test section in a line graph. Each line is color coded according to its Cycle_Count_Value. Show the relationship between the braking coefficient and the Outboard Temperature for each stop in a Test Section</p>
-      <div>
         <img src="{{fig_7}}" alt="third graph">
       </div>
       <p><i>Description</i>: This graph displays the Mu value versus Outboard Temperature for each test section in a scatterplot with a regression line. Each Test section has its own unique plot color. Show the trend between the braking coefficient and the Outboard Temperature for each test section</p>
@@ -329,6 +325,9 @@
         <img src="{{fig2_7}}" alt="third graph">
       </div>
       <p><i>Description</i>:Again, this graph has the same concept as the previous with the exception that a scatterplot is used in unison with a boxplot to better visualize the distribution of the friction levels amongst different test sections. Majority of the data points being close to the color region is an indication of consistency of the brakes</p>
+      <div>
+        <img src="{{fig2_8}}" alt="third graph">
+      </div>
     </article>
   </body>
 </html>
