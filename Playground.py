@@ -5,6 +5,8 @@ import seaborn as sns
 from pandas.plotting import table
 
 
+
+
 data_path = "/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Datasets/FDP X 19 DATA.xlsx"
 df1 = pd.read_excel(data_path, sheet_name="Three Sections")
 df1 = df1[df1["Final Temp"] > 0] 

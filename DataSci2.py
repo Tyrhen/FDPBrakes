@@ -12,7 +12,6 @@ df1 = pd.read_excel(data_path, sheet_name="Three Sections")
 df1 = df1[df1["Final Temp"] > 0] 
 df2 = pd.read_excel(data_path, sheet_name="Three Sections #2")
 
-
 sns.set_style("darkgrid")
 sns.set_palette("bright")
 
@@ -49,8 +48,6 @@ def figure8():
     y = df1.groupby(['Test Section']).mean()
     fig8 = sns.barplot(x = 'Test Section', y = 'Friction Level', data = y.reset_index())
     return fig8.figure.savefig("/Users/Ty/Desktop/FDP_brakes_proj_local/Figures/figure8.svg")
-
-
 
 plt.clf()
 figure1()
