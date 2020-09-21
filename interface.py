@@ -7,11 +7,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns 
-import Datasci
-
-
-
-
+import Datasci 
 
 #Functions for the buttons of the GUI
 def givedata():
@@ -38,51 +34,51 @@ def givedata():
 	if Submodel is not None:
 		print(Submodel)
 
-	tire_size = simpledialog.askstring("Input", "What is the tire size? (Front/Rear)", parent=root,)
+	tire_size = simpledialog.askstring("Input", "What is the tire size? (Front/Rear) [cm]", parent=root,)
 	if tire_size is not None:
 		print(tire_size)
 
-	rolling_radius = simpledialog.askstring("Input", "What is the rolling radius size? (Front/Rear)", parent=root,)
+	rolling_radius = simpledialog.askstring("Input", "What is the rolling radius size? (Front/Rear) [cm]", parent=root,)
 	if rolling_radius is not None:
 		print(rolling_radius)
 	
-	vehicle_weight = simpledialog.askinteger("Input", "What is gross vehicle weight of the vehicle?", parent=root, minvalue=0, maxvalue = 10000)
+	vehicle_weight = simpledialog.askinteger("Input", "What is gross vehicle weight of the vehicle? [kgf],[N]", parent=root, minvalue=0, maxvalue = 10000)
 	if vehicle_weight is not None:
 		print(vehicle_weight)
 
-	cg_height = simpledialog.askinteger("Input", "What is the height of the center of gravity?", parent=root, minvalue=0, maxvalue=2025)
+	cg_height = simpledialog.askinteger("Input", "What is the height of the center of gravity? [m]", parent=root, minvalue=0, maxvalue=2025)
 	if cg_height is not None:
 		print(cg_height)
 
-	wheelbase = simpledialog.askinteger("Input", "What is length  of the wheelbase?", parent=root, minvalue=0, maxvalue=2025)
+	wheelbase = simpledialog.askinteger("Input", "What is length  of the wheelbase? [m]", parent=root, minvalue=0, maxvalue=2025)
 	if wheelbase is not None:
 		print(wheelbase)
 	
-	brake_brand = simpledialog.askstring("Input", "What is the name/brand of the brake? (Front/Rear)", parent=root,)
+	brake_brand = simpledialog.askstring("Input", "What is the name/brand of the brake?", parent=root,)
 	if brake_brand is not None:
 		print(brake_brand)
 
-	brake_size = simpledialog.askstring("Input", "What is the brake size? (eff.radius/outside diam./thickness)", parent=root,)
+	brake_size = simpledialog.askstring("Input", "What is the brake size? (eff.radius/outside diam./thickness)[mm]", parent=root,)
 	if brake_size is not None:
 		print(brake_size)
 
-	caliper_size = simpledialog.askstring("Input", "What is the caliper size? (piston diameter/number of pistons)", parent=root,)
+	caliper_size = simpledialog.askstring("Input", "What is the caliper size? (piston diameter/number of pistons)[mm]", parent=root,)
 	if caliper_size is not None:
 		print(caliper_size)
 
-	length_pad = simpledialog.askinteger("Input", "What is the length of the Lining (pad) in the sliding direction?", parent=root, minvalue = 0 , maxvalue = 500)
+	length_pad = simpledialog.askinteger("Input", "What is the length of the Lining (pad) in the sliding direction? [mm]", parent=root, minvalue = 0 , maxvalue = 500)
 	if length_pad is not None:
 		print(length_pad)
 
-	width_pad = simpledialog.askinteger("Input", "What is the width of the Lining (pad) in the perpendicular direction?", parent=root, minvalue = 0 , maxvalue = 500)
+	width_pad = simpledialog.askinteger("Input", "What is the width of the Lining (pad) in the perpendicular direction? [mm]", parent=root, minvalue = 0 , maxvalue = 500)
 	if width_pad is not None:
 		print(width_pad)
 
-	thickness_pad = simpledialog.askinteger("Input", "What is the thickness of the Lining (pad)?", parent=root, minvalue = 0 , maxvalue = 500)
+	thickness_pad = simpledialog.askinteger("Input", "What is the thickness of the Lining (pad)? [mm]", parent=root, minvalue = 0 , maxvalue = 500)
 	if thickness_pad is not None:
 		print(thickness_pad)
 
-	area_pad = simpledialog.askinteger("Input", "What is the area of the Lining (pad)?", parent=root, minvalue = 0 , maxvalue = 5000)
+	area_pad = simpledialog.askinteger("Input", "What is the area of the Lining (pad)? [mm^2]", parent=root, minvalue = 0 , maxvalue = 5000)
 	if area_pad is not None:
 		print(area_pad)
 
@@ -90,19 +86,19 @@ def givedata():
 	if wheel_drive is not None:
 		print(wheel_drive)
 
-	inertia = simpledialog.askinteger("Input", "What is the calculated Inertia? (Front/Rear)", parent=root, minvalue = 0 , maxvalue = 5000)
+	inertia = simpledialog.askinteger("Input", "What is the calculated Inertia? [kgm^2]", parent=root, minvalue = 0 , maxvalue = 5000)
 	if inertia is not None:
 		print(inertia)
 
-	shaft_speed = simpledialog.askinteger("Input", "What is the shaft speed at 50 km/h? (Front/Rear)", parent=root, minvalue = 0 , maxvalue = 5000)
+	shaft_speed = simpledialog.askinteger("Input", "What is the shaft speed at 50 km/h? [km/h]", parent=root, minvalue = 0 , maxvalue = 5000)
 	if shaft_speed is not None:
 		print(shaft_speed)
 
-	braking_torque = simpledialog.askinteger("Input", "What is the braking torque at 0.3g?", parent=root, minvalue = 0 , maxvalue = 5000)
+	braking_torque = simpledialog.askinteger("Input", "What is the braking torque at 0.3g? [N*m]", parent=root, minvalue = 0 , maxvalue = 5000)
 	if braking_torque is not None:
 		print(braking_torque)
 
-	friction_material = simpledialog.askinteger("Input", "What is the friction material on the pad?", parent=root, minvalue = 0 , maxvalue = 5000)
+	friction_material = simpledialog.askstring("Input", "What is the friction material on the pad?", parent=root,)
 	if friction_material is not None:
 		print(friction_material)
 
