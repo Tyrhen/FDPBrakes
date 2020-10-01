@@ -51,7 +51,22 @@ img {
   transform: translate(130px, 0px)
 
 }
+* {
+  box-sizing: border-box;
+}
 
+.column {
+  float: left;
+  width: 50%;
+  padding: 6px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 /*Page Formatting*/
 
 @font-face {
