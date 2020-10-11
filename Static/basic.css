@@ -1,27 +1,53 @@
 /*Table Formatting*/
-#customers {
+#testdatatable {
   border-collapse: collapse;
   font-size: small;
   display: inline-table;
   width: 220%;
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+#testdatatable tr:nth-child(even){background-color: #f2f2f2;}
 
-#customers tr:hover {background-color: #ddd;}
+#testdatatable tr:hover {background-color: #ddd;}
 
-#customers th {
+#testdatatable th {
   text-align: left;
   background-color: #26679c;
   color: white;
 }
-#customers #subth {
+#testdatatable #subth {
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+}
+
+/*Table Formatting*/
+#avgmutable {
+  border-collapse: separate;
+  font-size: small;
+  display: inline-table;
+  width: 75%;
+}
+
+#avgmutable tr:nth-child(even){background-color: #f2f2f2;}
+
+#avgmutable tr:hover {background-color: #ddd;}
+
+#avgmutable tr {
+  text-align: center;
+}
+
+#avgmutable th {
+  text-align: center;
+  background-color: #26679c;
+  color: white;
+}
+#avgmutable #subth {
   text-align: left;
   background-color: rgb(255, 255, 255);
 }
 
 div.border {border-style: solid;
-  transform: translate(0px, 100px);}
+  transform: translate(0px, 200px);}
 /*Image Formatting*/
 
 .fig1{
@@ -170,7 +196,7 @@ html {
     color: #000000;
     text-align: center;
     font-size: 30pt;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Fira Sans;
     margin: 1cm 1cm;
     @page: no-chapter;
     width: 100%; }
