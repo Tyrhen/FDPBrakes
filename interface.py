@@ -170,6 +170,7 @@ def getdata():
 	file_path = filedialog.askopenfilename(title = 'Select File',filetypes=[("Excel files", ".xlsx .xls")])
 	return file_path	
 def DataSci2():
+	""" This module takes in data and creates graphs from the dataframes"""
 	data_path = getdata()
 	df1 = pd.read_excel(data_path, sheet_name="Three Sections")
 	df1 = df1[df1["Final Temp"] > 0] 

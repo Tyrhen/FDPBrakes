@@ -83,15 +83,27 @@ img {
 
 .column {
   float: left;
-  width: 50%;
-  padding: 6px;
-}
+  width: 33.3%;
 
+}
+.column img {
+  margin-top: 8px;
+  padding: 55px;
+  
+}
 /* Clearfix (clear floats) */
 .row::after {
   content: "";
   clear: both;
   display: table;
+}
+
+.rotateimg90 {
+  -webkit-transform:rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 /*Page Formatting*/
 
