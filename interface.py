@@ -162,7 +162,7 @@ def PDFconverter():
         
         #Rendering the variables in and then converting the HTML to PDF
     html_out = template.render(template_vars)
-    HTML(string = html_out, base_url='.').write_pdf('report.pdf', stylesheets=["/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Static/basic.css"])
+    HTML(string = html_out, base_url='.').write_pdf('mockreport.pdf', stylesheets=["/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Static/basic.css"])
 def getdata():
 	"""
 	prompt user for path of the excel file that contains all the test data
