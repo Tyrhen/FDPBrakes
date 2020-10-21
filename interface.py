@@ -176,7 +176,7 @@ def DataSci2():
 	df1 = df1[df1["Final Temp"] > 0] 
 	df2 = pd.read_excel(data_path, sheet_name="Three Sections #2")
 
-	sns.set_style("darkgrid")
+	
 	sns.set_palette("bright")
 
 	def figure1():
