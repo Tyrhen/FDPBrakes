@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns 
+from xlsx2html import xlsx2html
+
 def PDFconverter():
 
 
@@ -25,4 +27,9 @@ def PDFconverter():
     html_out = template.render(template_vars)
     HTML(string = html_out, base_url='.').write_pdf('testerreport.pdf', stylesheets=["/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Static/basic.css"])
 
+
+def excel_to_html(path):
+    xlsx2html(path, '/Users/Ty/Desktop/FDP_brakes_proj_local/FDPBrakes/Datasets/TestExcel2HTML.html')
+
 PDFconverter()
+
