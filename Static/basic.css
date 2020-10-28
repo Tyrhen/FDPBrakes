@@ -46,9 +46,36 @@
   background-color: rgb(255, 255, 255);
 }
 
+/*Table Formatting*/
+#rawdatatable {
+  border-collapse: separate;
+  font-size: small;
+  display: inline-table;
+  width: .08%;
+}
+
+#rawdatatable tr:nth-child(even){background-color: #f2f2f2;}
+
+#rawdatatable tr:hover {background-color: #ddd;}
+
+#rawdatatable tr {
+  text-align: center;
+}
+
+#rawdatatable th {
+  text-align: center;
+  background-color: #26679c;
+  color: white;
+}
+#rawdatatable #subth {
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+}
+
+
+/*Image Formatting*/
 div.border {border-style: solid;
   transform: translate(0px, 200px);}
-/*Image Formatting*/
 
 .fig1{
   width: 100%;
