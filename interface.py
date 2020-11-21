@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns 
-import Datasci 
+import Datasci
 
 #Functions for the buttons of the GUI
 def givedata():
